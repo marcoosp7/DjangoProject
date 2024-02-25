@@ -2,7 +2,7 @@ from django.shortcuts import render,HttpResponse, redirect
 from django.core.mail import send_mail
 from .models import Mensaje
 from django.http import HttpResponseRedirect
-
+from django.contrib import messages
 
 #creo tantas vistas como paginas
 
@@ -32,7 +32,6 @@ def enviar_mensaje(request):
         mensaje = request.POST.get('mensaje')
         nuevo_mensaje = Mensaje(nombre=nombre, email=email, mensaje=mensaje)
         nuevo_mensaje.save()
-        return redirect('Contacto')  
+        messages.success(request, '¡Mensaje enviado con éxito!')
+        return redirect('Contacto')
     return render(request, 'ProyectoDjangoApp/contacto.html')
-
-    return HttpResponse("Mensaje enviado correctamente")

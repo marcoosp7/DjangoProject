@@ -15,6 +15,13 @@
                         <span class="section-heading-lower">¡Contáctanos!</span>
                     </h2>
                     <p class="mb-0">Estamos aquí para ayudarte. Si tienes alguna pregunta, comentario o inquietud, no dudes en contactarnos. Te responderemos lo antes posible.</p>
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-success" role="alert">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
                     <!-- Contact Form -->
                     <form action="{% url 'enviarMensaje' %}" method="post" style="color: black; font-weight: bolder;">
                         {% csrf_token %}
