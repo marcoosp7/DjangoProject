@@ -1,0 +1,41 @@
+{% extends "ProyectoDjangoApp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
+<section class="page-section cta" style="background-color: transparent;">
+    <div class="container">
+        <div class="row" >
+            <div class="col-xl-9 mx-auto">
+                <div class="cta-inner text-center rounded" style="background-color: orange !important; color: black; font-weight: bolder; background-color: none;">
+                    <h2 class="section-heading mb-4">
+                        <span class="section-heading-upper">¿Tienes alguna pregunta?</span>
+                        <span class="section-heading-lower">¡Contáctanos!</span>
+                    </h2>
+                    <p class="mb-0">Estamos aquí para ayudarte. Si tienes alguna pregunta, comentario o inquietud, no dudes en contactarnos. Te responderemos lo antes posible.</p>
+                    <!-- Contact Form -->
+                    <form action="/enviar-mensaje/" method="post" style="color: black; font-weight: bolder;">
+                        {% csrf_token %}
+                        <div class="form-group mt-4">
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" class="form-control" id="nombre" name="nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje:</label>
+                            <textarea class="form-control" rows="5" id="mensaje" name="mensaje" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

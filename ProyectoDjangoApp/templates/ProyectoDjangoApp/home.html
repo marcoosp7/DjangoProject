@@ -1,0 +1,44 @@
+{% extends "ProyectoDjangoApp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+  <!--heredo de base-->
+  <!-- Heading -->
+  <section class="page-section clearfix">
+    <div class="container">
+      <div class="intro">
+        <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'ProyectoDjangoApp/img/home.jpg' %}" alt="">
+        <div class="intro-text left-0 text-center bg-faded p-5 rounded" style="background-color: orange !important;">
+          <h2 class="section-heading mb-4" style="color: black; ">
+            <span class="section-heading-upper" style="font-weight: bolder !important;">En un solo click</span>
+            <span class="section-heading-lower">Empieza a entrenar</span>
+          </h2>
+          <p class="mb-3" style="font-size: 1.3em; font-weight: bolder;">Realiza tu reserva en nuestras pistas deportivas y comienza a ejercitar
+          </p>
+        
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  
+    <!-- Message -->
+    <section class="page-section cta" style="background-color: transparent;">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <div class="cta-inner text-center rounded" style="background-color: orange !important;">
+              <h2 class="section-heading mb-4">
+                <span class="section-heading-upper" style="color: black; ">Compromiso total</span>
+                <span class="section-heading-lower" style="color: black; ">Garantizado</span>
+              </h2>
+              <p class="mb-0" style="color: black; ">Proyecto Empresarial Gestión de Reservas</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {% endblock %}
