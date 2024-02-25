@@ -9,4 +9,6 @@ urlpatterns = [
     path('tienda',views.tienda, name="Tienda"),
     path('blog',views.blog, name="Blog"),
     path('contacto',views.contacto, name="Contacto"),
+    path('enviar-mensaje/', views.enviar_mensaje, name='enviarMensaje'),
+    
 ]

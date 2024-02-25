@@ -1,4 +1,8 @@
-from django.shortcuts import render,HttpResponse
+from django.shortcuts import render,HttpResponse, redirect
+from django.core.mail import send_mail
+from .models import Mensaje
+from django.http import HttpResponseRedirect
+
 
 #creo tantas vistas como paginas
 
@@ -17,3 +21,18 @@ def blog(request):
 
 def contacto(request):
     return render(request, "ProyectoDjangoApp/contacto.html")  #devuelve esto
+
+from django.shortcuts import render, redirect
+from .models import Mensaje
+
+def enviar_mensaje(request):
+    if request.method == 'POST':
+        nombre = request.POST.get('nombre')
+        email = request.POST.get('email')
+        mensaje = request.POST.get('mensaje')
+        nuevo_mensaje = Mensaje(nombre=nombre, email=email, mensaje=mensaje)
+        nuevo_mensaje.save()
+        return redirect('Contacto')  
+    return render(request, 'ProyectoDjangoApp/contacto.html')
+
+    return HttpResponse("Mensaje enviado correctamente")
